@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .main {
+            background-color: #D3DAD6;
+            height: 500px;
+            width: 850px;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
+
+        .Tema {
+            color: #1E2D2A;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        .Presence {
+            background-color: #4A6D66;
+            height: 400px;
+            width: 520px;
+            border-radius: 10px;
+            margin-left: 30px;
+            position: fixed;
+        }
+
+        .n1 {
+            background-color: #D3DAD6;
+            width: 200px;
+            height: 30px;
+            border-radius: 6px;
+            margin-left: 20px;
+            text-align: center;
+            color: hsl(168, 19%, 36%);
+            font-family: monospace;
+        }
+
+        .list {
+            color: white;
+            padding: 4px;
+            list-style-type: none;
+            size: 20px;
+            margin-left: 13px;
+        }
+
+        .mark {
+            height: 21px;
+            width: 70px;
+            position: fixed;
+            margin-top: 19px;
+            margin-left: 10px;
+            text-align: center;
+            background-color: #627872;
+            border-color: black;
+            border-radius: 5px;
+        }
+
+        .star-rating {
+            display: flex;
+            align-items: center;
+            width: 160px;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            margin-left: 95px;
+            position: relative;
+        }
+
+            .star-rating input {
+                display: none;
+            }
+
+            .star-rating > label {
+                width: 30px;
+                height: 30px;
+                font-family: Arial;
+                font-size: 30px;
+                transition: 0.2s ease;
+                color: orange;
+            }
+
+            .star-rating label:hover {
+                color: #ff8c11;
+                transition: 0.2s ease;
+            }
+
+            .star-rating label:active::before {
+                transform: scale(1.1);
+            }
+
+
+            .star-rating label::before {
+                content: '\2606';
+                top: 0px;
+                line-height: 26px;
+            }
+
+            .star-rating input:checked ~ label:before {
+                content: '\2605';
+            }
+
+
+        .bonus {
+            display: inline-block;
+        }
+
+        .notes1 {
+            margin-left: 600px;
+            margin-top: 30px;
+            border-radius: 9px;
+            background-color: #74877f33;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .notes2 {
+            margin-left: 600px;
+            margin-top: 30px;
+            border-radius: 9px;
+            background-color: #74877f33;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .notes3 {
+            margin-left: 600px;
+            margin-top: 30px;
+            border-radius: 9px;
+            background-color: #74877f33;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .notes4 {
+            margin-left: 600px;
+            margin-top: 30px;
+            border-radius: 9px;
+            background-color: #74877f33;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .data {
+            background-color: #4A6D66;
+            width: 240px;
+            height: 23px;
+            text-align: right;
+            border-radius: 5px;
+            margin-left: 940px;
+            color: #D3DAD6;
+            margin-top: 50px;
+        }
+
+        input[type="date"] {
+            background: transparent;
+            color: rgb(210, 210, 210);
+            border: 0px solid black;
+        }
+    </style>
+    <title>Logbook</title>
+</head>
+<body>
+    <div class="data">Date of lesson: <input type="date"></div>
+    <div class="main">
+
+        <h2 class="Tema">
+            <img src="https://pin.it/7sAvBcA " style="height:50px;"> Name of the lesson: Asp.Net Formatarea unui proiect pe platforma Figma
+        </h2>
+
+        <div class="Presence">
+            <div class="n1">
+                <h2>Name & Presence</h2>
+            </div>
+            <div class="list">
+                <h2>
+                    <img src="Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 5px">
+                    Fiodora Maria <input type="checkbox" style="width: 20px; height: 20px; ">
+                    <select name="Marks" class="mark">
+                        <option value="0">Mark</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select> <div class="bonus">
+                        <div class="star-rating">
+                            <input type="radio" name="stars" id="star-a" value="5" />
+                            <label for="star-a"></label>
+
+                            <input type="radio" name="stars" id="star-b" value="4" />
+                            <label for="star-b"></label>
+
+                            <input type="radio" name="stars" id="star-c" value="3" />
+                            <label for="star-c"></label>
+
+                            <input type="radio" name="stars" id="star-d" value="2" />
+                            <label for="star-d"></label>
+
+                            <input type="radio" name="stars" id="star-e" value="1" />
+                            <label for="star-e"></label>
+                        </div>
+                    </div>
+
+                </h2>
+                <h2>
+                    <img src="Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 10px">
+                    Podle Katy<input type="checkbox" style="width: 20px; height: 20px; margin-left: 45px;"><select name="Marks" class="mark">
+                        <option value="0">Mark</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select><div class="bonus">
+                        <div class="star-rating">
+                            <input type="radio" name="stars" id="star-a" value="5" />
+                            <label for="star-a"></label>
+
+                            <input type="radio" name="stars" id="star-b" value="4" />
+                            <label for="star-b"></label>
+
+                            <input type="radio" name="stars" id="star-c" value="3" />
+                            <label for="star-c"></label>
+
+                            <input type="radio" name="stars" id="star-d" value="2" />
+                            <label for="star-d"></label>
+
+                            <input type="radio" name="stars" id="star-e" value="1" />
+                            <label for="star-e"></label>
+                        </div>
+                    </div>
+                </h2>
+                <h2>
+                    <img src="Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 5px ">
+                    Sherlock HD<input type="checkbox" style="width: 20px; height: 20px; margin-left: 36px;"><select name="Marks" class="mark">
+                        <option value="0">Mark</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select><div class="bonus">
+                        <div class="star-rating">
+                            <input type="radio" name="stars" id="star-a" value="5" />
+                            <label for="star-a"></label>
+
+                            <input type="radio" name="stars" id="star-b" value="4" />
+                            <label for="star-b"></label>
+
+                            <input type="radio" name="stars" id="star-c" value="3" />
+                            <label for="star-c"></label>
+
+                            <input type="radio" name="stars" id="star-d" value="2" />
+                            <label for="star-d"></label>
+
+                            <input type="radio" name="stars" id="star-e" value="1" />
+                            <label for="star-e"></label>
+                        </div>
+                    </div>
+                </h2>
+                <h2>
+                    <img src="Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 5px">
+                    Spînu Mihaela<input type="checkbox" style="width: 20px; height: 20px;margin-left: 14px;"><select name="Marks" class="mark">
+                        <option value="0">Mark</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select><div class="bonus">
+                        <div class="star-rating">
+                            <input type="radio" name="stars" id="star-a" value="5" />
+                            <label for="star-a"></label>
+
+                            <input type="radio" name="stars" id="star-b" value="4" />
+                            <label for="star-b"></label>
+
+                            <input type="radio" name="stars" id="star-c" value="3" />
+                            <label for="star-c"></label>
+
+                            <input type="radio" name="stars" id="star-d" value="2" />
+                            <label for="star-d"></label>
+
+                            <input type="radio" name="stars" id="star-e" value="1" />
+                            <label for="star-e"></label>
+                        </div>
+                    </div>
+                </h2>
+                <h2>
+                    <img src="Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 5px">
+                    Fiona Disne<input type="checkbox" style="width: 20px; height: 20px;margin-left: 35px;"><select name="Marks" class="mark">
+                        <option value="0">Mark</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select><div class="bonus">
+                        <div class="star-rating">
+                            <input type="radio" name="stars" id="star-a" value="5" />
+                            <label for="star-a"></label>
+
+                            <input type="radio" name="stars" id="star-b" value="4" />
+                            <label for="star-b"></label>
+
+                            <input type="radio" name="stars" id="star-c" value="3" />
+                            <label for="star-c"></label>
+
+                            <input type="radio" name="stars" id="star-d" value="2" />
+                            <label for="star-d"></label>
+
+                            <input type="radio" name="stars" id="star-e" value="1" />
+                            <label for="star-e"></label>
+                        </div>
+                    </div>
+                </h2>
+
+            </div>
+
+        </div>   <textarea class="notes1">Your notes here...
+        </textarea>
+        <textarea class="notes2">Your notes here...
+            </textarea>
+        <textarea class="notes3">Your notes here...
+                </textarea>
+        <textarea class="notes4">Your notes here...
+                    </textarea>
+    </div>
+
+
+
+
+
+</body>
+</html>
