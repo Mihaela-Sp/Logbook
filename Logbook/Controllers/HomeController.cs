@@ -12,6 +12,8 @@ namespace LogBook.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
 
+        public int SelectedLesson { get; set; }
+
         public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
             _logger = logger;
@@ -34,6 +36,32 @@ namespace LogBook.Controllers
         {
             var students =  _context.Student.Where(x=>x.Mark.LessonId==lessonid).ToListAsync();
             return RedirectToAction("Index", students);
+        }
+
+        public IActionResult SetMark(int studentId, int lessonid, int mark)
+        {
+            var checkIfExists = _context.Mark.FirstOrDefault(x => x.LessonId == lessonid
+                                        && x.StudentId == studentId);
+
+            var markObject = new Mark
+            {
+                LessonId = lessonid,
+                StudentId = studentId,
+                Points = mark
+            };
+
+            if (checkIfExists == null)
+            {
+                _context.Mark.Add(markObject);
+            }
+            else
+            {
+                _context.Mark.Update(markObject);
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

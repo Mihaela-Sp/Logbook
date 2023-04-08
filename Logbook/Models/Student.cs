@@ -8,7 +8,7 @@
         public string Image { get; set; }
         public DateTime CreatedOn { get; set; }
         
-        public Mark Mark { get; set; }  
+        public Mark? Mark { get; set; }  
 
     }
 }
