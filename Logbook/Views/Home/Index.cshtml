@@ -149,7 +149,7 @@ margin-left: 13px;
     height: 23px;
     text-align: right;
     border-radius: 5px;
-    margin-left: 850px;
+    margin-left: 1000px;
     color: #D3DAD6;
     margin-top: 50px;
 }
@@ -157,15 +157,20 @@ input[type="date"] {
   background: transparent;
   color: rgb(210, 210, 210);
   border: 0px solid black;
-}
+		}
 
     </style>
-    <title>Logbook</title>
+   <title>Logbook</title>
 </head>
 <body>
+	<form action="/Home/LoadClass" method="post">
+        <select  class="btn btn-secondary dropdown-toggle" asp-items="ViewBag.Lessonid" id="lessonid" name="lessonid"></select>
+        <input type="submit">
+    </form>
+    
    <div class="data">Date of lesson: <input type="date"></div>
     <div class="main">
-    
+       
      <h2 class="Tema">
             <img src="img/Pen.jpg" style="height:50px;"> Name of the lesson: Asp.Net Formatarea unui proiect pe platforma Figma
      </h2>
@@ -175,7 +180,7 @@ input[type="date"] {
        <h2>Name & Presence</h2> 
     </div>
         <div class="list">
-                @foreach (var item in Model)
+                @foreach (var item in Model )
                 {
         <h2> <img src="img/Random.jpg" style="width:34px; height:34px; border-radius:50%; margin-top: 5px">
         @item.Name <input type="checkbox" style="width: 20px; height: 20px; "> 
@@ -211,6 +216,7 @@ input[type="date"] {
       </div></div>
             
            </h2> 
+           <span>@item.Mark?.Notes</span>
            }    
       </div>
    

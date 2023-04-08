@@ -54,7 +54,7 @@ namespace LogBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,Name,Image,Presence,Marks,Bonus,Lesson,Notes,CreatedOn")] Student student)
+        public async Task<IActionResult> Create( Student student)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace LogBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Name,Image,Presence,Marks,Bonus,Lesson,Notes,CreatedOn")] Student student)
+        public async Task<IActionResult> Edit(int id, Student student)
         {
             if (id != student.id)
             {

@@ -11,5 +11,7 @@ namespace LogBook.Data
         {
         }
         public DbSet<LogBook.Models.Student> Student { get; set; }
+        public DbSet<LogBook.Models.Lesson> Lesson { get; set; }
+        public DbSet<LogBook.Models.Mark> Mark { get; set; }
     }
 }

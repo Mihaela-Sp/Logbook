@@ -1290,7 +1290,7 @@
   word-wrap: break-word !important;
   word-break: break-word !important;
 }
-
+                          
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
@@ -4862,5 +4862,5 @@
     display: none !important;
   }
 }
-
+    */
 /*# sourceMappingURL=bootstrap-utilities.css.map */
